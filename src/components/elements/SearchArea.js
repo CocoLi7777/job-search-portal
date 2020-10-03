@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, AppBar, Toolbar, colors, Paper } from '@material-ui/core';
 import SearchBar from './SearchBar';
+import MoreOption from './MoreOption';
 import { findByLabelText } from '@testing-library/react';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   area: {
     margin: '0px auto',
-    width: '90%',
+    width: '100%',
   },
   mid: {
     backgroundColor: '#04c49e',
@@ -45,7 +46,7 @@ function SearchArea({ className, ...rest }) {
           />
         </Grid>
         <Grid item xs={12}>
-          More option
+          <MoreOption />
         </Grid>
       </Grid>
     </div>

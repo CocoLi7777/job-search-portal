@@ -55,10 +55,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    width: '60%',
-    height: '55px',
+    width: '100%',
+    height: '56px',
     fontWeight: 'bold',
-    marginTop: '28px',
+    marginTop: '32px',
     backgroundColor: '#c44536',
     fontSize: '20px',
     color: 'white',
