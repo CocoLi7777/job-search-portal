@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Grid, AppBar, Toolbar, colors, Paper } from '@material-ui/core';
 import JobCard from './JobCard';
 import Typography from '@material-ui/core/Typography';
 import PaginationBar from './Pagination';

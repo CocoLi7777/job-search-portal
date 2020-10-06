@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
-import { Paper, Button, Input, Grid, InputBase } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { Button, Grid } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -19,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
   search: {
     minHeight: 200,
     margin: '0px auto',
-
-    //padding: theme.spacing(0, 2),
     display: 'flex',
     alignItems: 'center',
     width: '80%',
@@ -65,19 +60,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#6a040f',
     },
   },
-  searchIcon: {
-    //marginRight: theme.spacing(2),
-    //color: theme.palette.icon,
-    color: 'black',
-  },
   searchInput: {
     flexGrow: 1,
   },
-  searchButton: {
-    //backgroundColor: theme.palette.common.white,
-    //marginLeft: theme.spacing(2),
-    backgroundColor: 'red',
-  },
+
   formControl: {
     width: '100%',
     backgroundColor: 'white',
@@ -107,7 +93,7 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
     <Grid container className={classes.search} spacing={3}>
       <Grid item sm={3} xs={12}>
         <Typography variant="h5" className={classes.title}>
-          What
+          Job
         </Typography>
         <TextField
           id="outlined-search"
@@ -142,7 +128,7 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
       </Grid>
       <Grid item sm={3} xs={12}>
         <Typography variant="h5" className={classes.title}>
-          Where
+          Location
         </Typography>
         <TextField
           id="outlined-search"
@@ -158,7 +144,6 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
           {' '}
         </Typography>
         <Button
-          className={classes.searchButton}
           onClick={onSearch}
           size="large"
           variant="contained"
