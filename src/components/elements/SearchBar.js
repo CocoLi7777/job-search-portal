@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
       borderColor: 'white',
     },
   },
+  item: { height: '50px' },
 }));
 
 function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
@@ -114,15 +115,33 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
             onChange={handleChange}
             className={classes.select}
           >
-            <MenuItem value={'All Levels'}>All Levels</MenuItem>
-            <MenuItem value={'Internship'}>Internship</MenuItem>
-            <MenuItem value={'Entry level'}>Entry level</MenuItem>
-            <MenuItem value={'back end'}>Junior</MenuItem>
-            <MenuItem value={'full stack'}>Mid-level</MenuItem>
-            <MenuItem value={'java'}>Senior</MenuItem>
-            <MenuItem value={'c#'}>Manager</MenuItem>
-            <MenuItem value={'javascript'}>Director</MenuItem>
-            <MenuItem value={'testing'}>Executive</MenuItem>
+            <MenuItem value={'All Levels'} className={classes.item}>
+              All Levels
+            </MenuItem>
+            <MenuItem value={'Internship'} className={classes.item}>
+              Internship
+            </MenuItem>
+            <MenuItem value={'Entry level'} className={classes.item}>
+              Entry level
+            </MenuItem>
+            <MenuItem value={'back end'} className={classes.item}>
+              Junior
+            </MenuItem>
+            <MenuItem value={'full stack'} className={classes.item}>
+              Mid-level
+            </MenuItem>
+            <MenuItem value={'java'} className={classes.item}>
+              Senior
+            </MenuItem>
+            <MenuItem value={'c#'} className={classes.item}>
+              Manager
+            </MenuItem>
+            <MenuItem value={'javascript'} className={classes.item}>
+              Director
+            </MenuItem>
+            <MenuItem value={'testing'} className={classes.item}>
+              Executive
+            </MenuItem>
           </Select>
         </FormControl>
       </Grid>
