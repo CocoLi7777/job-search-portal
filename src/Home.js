@@ -7,11 +7,10 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, AppBar, Toolbar, colors, Container } from '@material-ui/core';
 import SearchArea from './components/elements/SearchArea';
+import JobList from './components/elements/JobList';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: '80px',
-
     width: '100%',
   },
 }));
@@ -20,14 +19,13 @@ function Home({ className, ...rest }) {
   const classes = useStyles();
 
   return (
-    <Grid {...rest} container className={classes.root} xs={12}>
-      <Grid item xs={12}>
-        <SearchArea
-        //onSearch={onSearch}
-        //searchPlaceholder={searchPlaceholder}
-        />
-      </Grid>
-    </Grid>
+    <div {...rest} className={classes.root}>
+      <SearchArea
+      //onSearch={onSearch}
+      //searchPlaceholder={searchPlaceholder}
+      />
+      <JobList />
+    </div>
   );
 }
 

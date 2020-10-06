@@ -14,7 +14,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     marginTop: '20',
   },
   search: {
@@ -98,10 +97,10 @@ const useStyles = makeStyles((theme) => ({
 
 function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [level, setLevel] = React.useState('All Levels');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setLevel(event.target.value);
   };
 
   return (
@@ -120,27 +119,24 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
       </Grid>
       <Grid item sm={3} xs={12}>
         <Typography variant="h5" className={classes.title}>
-          Any Classification
+          Level
         </Typography>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel></InputLabel>
           <Select
-            value={age}
+            value={level}
             onChange={handleChange}
             className={classes.select}
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={'front end'}>Front-end Development</MenuItem>
-            <MenuItem value={'back end'}>Front-end Development</MenuItem>
-            <MenuItem value={'full stack'}>Full-stack Development</MenuItem>
-            <MenuItem value={'java'}>Java Development</MenuItem>
-            <MenuItem value={'c#'}>C# Development</MenuItem>
-            <MenuItem value={'javascript'}>Javascript Development</MenuItem>
-            <MenuItem value={'testing'}>Testing</MenuItem>
-            <MenuItem value={'QA'}>QA</MenuItem>
-            <MenuItem value={'BA'}>Business Analyst</MenuItem>
+            <MenuItem value={'All Levels'}>All Levels</MenuItem>
+            <MenuItem value={'Internship'}>Internship</MenuItem>
+            <MenuItem value={'Entry level'}>Entry level</MenuItem>
+            <MenuItem value={'back end'}>Junior</MenuItem>
+            <MenuItem value={'full stack'}>Mid-level</MenuItem>
+            <MenuItem value={'java'}>Senior</MenuItem>
+            <MenuItem value={'c#'}>Manager</MenuItem>
+            <MenuItem value={'javascript'}>Director</MenuItem>
+            <MenuItem value={'testing'}>Executive</MenuItem>
           </Select>
         </FormControl>
       </Grid>

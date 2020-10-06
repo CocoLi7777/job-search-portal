@@ -13,8 +13,9 @@ import { findByLabelText } from '@testing-library/react';
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#04c49e',
-    display: 'flex',
     width: '100%',
+    display: 'flex',
+
     flexDirection: 'center',
     alignItems: 'center',
     alignContent: 'center',
@@ -35,9 +36,6 @@ function SearchArea({ className, ...rest }) {
   return (
     <div {...rest} className={clsx(classes.root, className)}>
       <Grid container className={classes.area}>
-        <Grid item xs={12}>
-          Job Search
-        </Grid>
         <Grid item xs={12} className={classes.mid}>
           <SearchBar
             className={classes.search}

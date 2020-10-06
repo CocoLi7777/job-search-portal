@@ -44,24 +44,34 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    backgroundColor: '#2AA68B',
+    width: '100%',
+  },
+  main: {
     flexGrow: 1,
     margin: '0px auto',
-    background: '#48C9B0',
     width: '78%',
+    paddingBottom: '20px',
   },
   bar: {
-    background: '#48C9B0',
+    backgroundColor: 'transparent',
+    width: '100%',
+  },
+  second: {
+    width: '100%',
   },
   list: {
     display: 'flex',
-    alignItems: 'center',
     width: '100%',
   },
   btn: {
     width: '100%',
-    backgroundColor: '#48C9B0',
+    backgroundColor: '#2AA68B',
     height: '60px',
     color: 'white',
+    '&:hover': {
+      backgroundColor: 'black',
+    },
   },
 }));
 
@@ -75,23 +85,21 @@ export default function MoreOption() {
 
   return (
     <div className={classes.root}>
-      <div>
+      <div className={classes.main}>
         <AppBar position="static" className={classes.bar}>
-          <Grid item xs={12}>
-            <Tabs
-              value={value}
-              onChange={handleChange}
-              aria-label="simple tabs example"
-            >
-              <Tab label="Work types" {...a11yProps(0)} />
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
+          >
+            <Tab label="Work types" {...a11yProps(0)} />
 
-              <Tab label="Salary" {...a11yProps(1)} />
+            <Tab label="Salary" {...a11yProps(1)} />
 
-              <Tab label="listed time" {...a11yProps(2)} />
-            </Tabs>
-          </Grid>
+            <Tab label="listed time" {...a11yProps(2)} />
+          </Tabs>
         </AppBar>
-        <TabPanel value={value} index={0}>
+        <TabPanel value={value} index={0} className={classes.second}>
           <Grid container className={classes.list}>
             <Grid item sm={3} xs={12}>
               <Button variant="contained" className={classes.btn}>
