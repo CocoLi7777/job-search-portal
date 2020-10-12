@@ -20,7 +20,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -43,18 +43,22 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#2AA68B',
+    backgroundColor: 'transpartent',
     width: '100%',
+    color: 'white',
   },
   main: {
     flexGrow: 1,
     margin: '0px auto',
-    width: '78%',
-    paddingBottom: '20px',
+    width: '78.5%',
+    paddingBottom: '30px',
   },
   bar: {
-    backgroundColor: 'transparent',
+    background:
+      'linear-gradient(90deg, rgba(168,230,19,1) 0%, rgba(0,255,205,1) 34%, rgba(30,140,94,1) 100%)',
     width: '100%',
+    borderRadius: '5px',
+    color: '#555',
   },
   second: {
     width: '100%',
@@ -69,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
     height: '60px',
     color: 'white',
     '&:hover': {
-      backgroundColor: '#0c3129',
+      backgroundColor: '#21846F',
     },
   },
 }));
@@ -123,13 +127,8 @@ export default function MoreOption() {
           </Grid>
         </TabPanel>
 
-        <TabPanel value={value} index={1}>
+        <TabPanel value={value} index={1} className={classes.second}>
           <Grid container className={classes.list}>
-            <Grid item sm={1} xs={12}>
-              <Button variant="contained" className={classes.btn}>
-                $0
-              </Button>
-            </Grid>
             <Grid item sm={1} xs={12}>
               <Button variant="contained" className={classes.btn}>
                 30k
@@ -185,9 +184,14 @@ export default function MoreOption() {
                 200k
               </Button>
             </Grid>
+            <Grid item sm={1} xs={12}>
+              <Button variant="contained" className={classes.btn}>
+                200k+
+              </Button>
+            </Grid>
           </Grid>
         </TabPanel>
-        <TabPanel value={value} index={2}>
+        <TabPanel value={value} index={2} className={classes.second}>
           <Grid container className={classes.list}>
             <Grid item sm={2} xs={12}>
               <Button variant="contained" className={classes.btn}>

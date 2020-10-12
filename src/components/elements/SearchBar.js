@@ -12,6 +12,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: '20',
+    border: '1px red solid',
   },
   search: {
     minHeight: 200,
@@ -49,16 +50,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
+    color: '#555',
+    backgroundColor: '#c5ef1c',
+    '&:hover': {
+      backgroundColor: '#a5cf00',
+    },
     width: '100%',
     height: '56px',
     fontWeight: 'bold',
     marginTop: '32px',
-    backgroundColor: '#c44536',
     fontSize: '20px',
-    color: 'white',
-    '&:hover': {
-      backgroundColor: '#6a040f',
-    },
   },
   searchInput: {
     flexGrow: 1,
@@ -168,7 +169,7 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
           variant="contained"
           className={classes.btn}
         >
-          MALIH
+          SEARCH
         </Button>
       </Grid>
     </Grid>
