@@ -1,12 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { AppBar, Grid } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+
+const StyledTabs = withStyles({
+  indicator: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    '& > span': {
+      width: '100%',
+      backgroundColor: '#d7f463',
+    },
+  },
+})((props) => <Tabs {...props} TabIndicatorProps={{ children: <span /> }} />);
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -89,8 +101,8 @@ export default function MoreOption() {
   return (
     <div className={classes.root}>
       <div className={classes.main}>
-        <AppBar position="static" className={classes.bar}>
-          <Tabs
+        <AppBar position="static" className={classes.bar} color="default">
+          <StyledTabs
             value={value}
             onChange={handleChange}
             aria-label="simple tabs example"
@@ -100,7 +112,7 @@ export default function MoreOption() {
             <Tab label="Salary" {...a11yProps(1)} />
 
             <Tab label="listed time" {...a11yProps(2)} />
-          </Tabs>
+          </StyledTabs>
         </AppBar>
         <TabPanel value={value} index={0} className={classes.second}>
           <Grid container className={classes.list}>
