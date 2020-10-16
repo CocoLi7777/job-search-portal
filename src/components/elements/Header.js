@@ -16,10 +16,18 @@ function Header() {
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.root} position="static">
+    <AppBar
+      className={classes.root}
+      position="static"
+      data-test="headerComponent"
+    >
       <Toolbar>
-        <img src="/malih.png" alt="logo" style={{ width: '140px' }}></img>
-        <div />
+        <img
+          src="/malih.png"
+          alt="logo"
+          style={{ width: '140px' }}
+          data-test="logoIMG"
+        />
       </Toolbar>
     </AppBar>
   );
