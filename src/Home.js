@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import SearchArea from './components/elements/SearchArea';
 import JobList from './components/elements/JobList';
+import Subject from './components/elements/Subject';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,6 +17,7 @@ function Home({ className, ...rest }) {
 
   return (
     <div {...rest} className={classes.root}>
+      <Subject />
       <SearchArea
       //onSearch={onSearch}
       //searchPlaceholder={searchPlaceholder}
