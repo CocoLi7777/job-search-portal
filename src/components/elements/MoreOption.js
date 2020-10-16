@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: 'transpartent',
     width: '100%',
+    height: '500px',
     color: 'white',
   },
   main: {

@@ -9,6 +9,7 @@ import Subject from './components/elements/Subject';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    fontFamily: 'roboto',
   },
 }));
 
