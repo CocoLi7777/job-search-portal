@@ -15,6 +15,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+
     background:
       'linear-gradient(90deg, rgba(168,230,19,1) 0%, rgba(0,255,205,1) 34%, rgba(30,140,94,1) 100%)',
   },
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   iconBtn: {
     marginTop: '10px',
+    marginBottom: '5px',
 
     //border: '1px red solid',
   },
@@ -88,7 +90,7 @@ function Header() {
               variant="contained"
               className={classes.btnGroup}
             >
-              <Button className={classes.btnItem}>Home</Button>
+              <Button className={classes.btnItem}>Search</Button>
               <Button className={classes.btnItem}>Profile</Button>
               <Button className={classes.btnItem}>Company</Button>
             </ButtonGroup>

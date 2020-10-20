@@ -2,10 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import SearchArea from './components/elements/SearchArea';
 import JobList from './components/elements/JobList';
-import Subject from './components/elements/Subject';
-import SloganHand from './components/elements/SloganHand';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,23 +11,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home({ className, ...rest }) {
+function Jobs({ className, ...rest }) {
   const classes = useStyles();
 
   return (
     <div {...rest} className={classes.root}>
-      <Subject />
-      <SearchArea
-      //onSearch={onSearch}
-      //searchPlaceholder={searchPlaceholder}
-      />
-      <SloganHand />
+      <JobList />
     </div>
   );
 }
 
-Home.propTypes = {
+Jobs.propTypes = {
   className: PropTypes.string,
 };
 
-export default Home;
+export default Jobs;

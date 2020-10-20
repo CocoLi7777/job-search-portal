@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     right: 0,
   },
+  city: {
+    marginTop: 12,
+    marginBottom: 12,
+  },
 }));
 
 export default function JobCard() {
@@ -37,13 +41,16 @@ export default function JobCard() {
             color="textSecondary"
             gutterBottom
           >
-            Melbourne
+            Source: Seek
           </Typography>
           <Typography variant="h5" component="h2">
             Frontend Developer
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             Myer
+          </Typography>
+          <Typography variant="body2" component="p" className={classes.city}>
+            Melbourne -- CBD
           </Typography>
           <Typography variant="body2" component="p">
             An immediate opportunity for a passionate Graduate / Developer to
@@ -73,13 +80,16 @@ export default function JobCard() {
             color="textSecondary"
             gutterBottom
           >
-            Melbourne
+            Source: Indeed
           </Typography>
           <Typography variant="h5" component="h2">
             Senior Front-end Developer
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             Optus
+          </Typography>
+          <Typography variant="body2" component="p" className={classes.city}>
+            Melbourne -- CBD
           </Typography>
           <Typography variant="body2" component="p">
             An immediate opportunity for a passionate Graduate / Developer to
@@ -109,7 +119,7 @@ export default function JobCard() {
             color="textSecondary"
             gutterBottom
           >
-            Melbourne
+            Source: Jora
           </Typography>
           <Typography variant="h5" component="h2">
             Web Developer
@@ -117,6 +127,10 @@ export default function JobCard() {
           <Typography className={classes.pos} color="textSecondary">
             Canvas
           </Typography>
+          <Typography variant="body2" component="p" className={classes.city}>
+            Melbourne -- CBD
+          </Typography>
+
           <Typography variant="body2" component="p">
             An immediate opportunity for a passionate Graduate / Developer to
             join our talented team.

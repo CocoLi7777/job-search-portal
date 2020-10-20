@@ -8,6 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -164,10 +165,12 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
           {' '}
         </Typography>
         <Button
-          onClick={onSearch}
+          //onClick={onSearch}
+          to="/jobs"
           size="large"
           variant="contained"
           className={classes.btn}
+          //component={RouterLink}
         >
           SEARCH
         </Button>
