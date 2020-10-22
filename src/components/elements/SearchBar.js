@@ -9,6 +9,7 @@ import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link as RouterLink } from 'react-router-dom';
+import { Link } from '@reach/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -82,6 +83,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   item: { height: '50px' },
+  link: {
+    textDecoration: 'none',
+  },
 }));
 
 function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
@@ -164,16 +168,18 @@ function SearchBar({ onSearch, className, searchPlaceholder, ...rest }) {
         <Typography variant="h5" className={classes.title}>
           {' '}
         </Typography>
-        <Button
-          //onClick={onSearch}
-          to="/jobs"
-          size="large"
-          variant="contained"
-          className={classes.btn}
-          //component={RouterLink}
-        >
-          SEARCH
-        </Button>
+        <Link to={'/jobs'} className={classes.link}>
+          <Button
+            //onClick={onSearch}
+            //to="/Jobs"
+            size="large"
+            variant="contained"
+            className={classes.btn}
+            //component={RouterLink}
+          >
+            SEARCH
+          </Button>
+        </Link>
       </Grid>
     </Grid>
   );

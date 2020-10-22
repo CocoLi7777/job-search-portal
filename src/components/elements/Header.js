@@ -11,6 +11,7 @@ import {
   ButtonGroup,
   Grid,
 } from '@material-ui/core';
+import { Link } from '@reach/router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
   item: {
     textAlign: 'center',
   },
+  link: {
+    textDecoration: 'none',
+  },
 }));
 
 function Header() {
@@ -76,13 +80,15 @@ function Header() {
       <Toolbar>
         <Grid container spacing={2}>
           <Grid item sm={7} xs={12}>
-            <img
-              src="/malih.png"
-              alt="logo"
-              style={{ width: '220px', height: '40px' }}
-              className={classes.iconBtn}
-              data-test="logoIMG"
-            />
+            <Link to={'/'} className={classes.link}>
+              <img
+                src="/malih.png"
+                alt="logo"
+                style={{ width: '220px', height: '40px' }}
+                className={classes.iconBtn}
+                data-test="logoIMG"
+              />
+            </Link>
           </Grid>
           <Grid item sm={4} xs={12} className={classes.item}>
             <ButtonGroup

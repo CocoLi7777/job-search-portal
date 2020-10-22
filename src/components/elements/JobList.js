@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import JobCard from './JobCard';
 import Typography from '@material-ui/core/Typography';
 import PaginationBar from './Pagination';
+import { useJobsFetch } from './../hooks/useJobsFetch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,25 +19,32 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#f4f6f8',
   },
   title: {
-    fontSize: '15px',
-    color: 'gray',
-    marginTop: '10px',
-    marginBottom: '10px',
-    width: '60%',
+    fontSize: '18px',
+    color: 'black',
+
+    marginTop: '20px',
+    marginBottom: '20px',
+    width: '54%',
   },
 }));
 
 function JobList({ className, ...rest }) {
   const classes = useStyles();
 
+  const [{ jobs, error }, fetchJobs] = useJobsFetch();
+  //console.log(jobs);
+
   return (
     <div {...rest} className={clsx(classes.root, className)}>
-      <Typography className={classes.title}>34 jobs found</Typography>
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
-      <JobCard />
+      <Typography className={classes.title}>
+        {jobs.length} jobs found
+      </Typography>
+      <div>
+        {jobs.map((job) => (
+          <JobCard key={job.jobId} clickable job={job} jobId={job.jobId} />
+        ))}
+      </div>
+
       <PaginationBar />
     </div>
   );

@@ -3,20 +3,28 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import JobDescription from './components/elements/JobDescription';
+import { useJobFetch } from './components/hooks/useJobFetch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100%',
+    //width: '100%',
     fontFamily: 'roboto',
+
+    backgroundColor: '#f4f6f8',
   },
 }));
 
-function Job({ className, ...rest }) {
+function Job({ jobId, className, ...rest }) {
   const classes = useStyles();
+
+  const [{ job, error }, fetchJob] = useJobFetch();
+  useEffect(() => {
+    fetchJob(jobId);
+  }, []);
 
   return (
     <div {...rest} className={classes.root}>
-      <JobDescription />
+      <JobDescription job={job} />
     </div>
   );
 }

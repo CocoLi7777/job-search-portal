@@ -15,15 +15,16 @@ const useStyles = makeStyles((theme) => ({
     margin: '10px auto',
   },
   pic: {
-    width: '80%',
-    maxWidth: '500px',
+    width: '90%',
+    maxWidth: '400px',
   },
   title: {
     fontFamily: 'Open Sans',
     color: '#2F2E2E',
-    fontSize: '250%',
-    textAlign: 'right',
-    paddingTop: '30px',
+    fontSize: '45px',
+    textAlign: 'center',
+    marginTop: '30px',
+    maxWidth: '90%',
   },
 }));
 
@@ -33,14 +34,17 @@ function Slogan({ className, ...rest }) {
   return (
     <div {...rest} className={classes.root}>
       <Grid container>
-        <Grid item sm={6} xs={6}>
-          <Typography variant="h4" gutterBottom className={classes.title}>
-            <p>Upload Your Resume. </p>
-            <p>Get Job Matches.</p>
+        <Grid item sm={6} xs={12}>
+          <Typography className={classes.title}>
+            CAREERS OF THE FUTURE
           </Typography>
         </Grid>
-        <Grid item sm={6} xs={6}>
-          <img src={Hand} alt="logo" className={classes.pic} />
+        <Grid item sm={6} xs={12}>
+          <img
+            src="https://static.wixstatic.com/media/21035b_112a5e1a088f4ad5a26d00e44d650a4f.png/v1/fill/w_541,h_755,al_c,lg_1,q_90,usm_0.33_1.00_0.00/21035b_112a5e1a088f4ad5a26d00e44d650a4f.webp"
+            alt="logo"
+            className={classes.pic}
+          />
         </Grid>
       </Grid>
     </div>

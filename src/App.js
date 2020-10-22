@@ -11,7 +11,7 @@ const App = (className) => (
     <Router>
       <Home path="/" />
       <Jobs path="/jobs" />
-      <Job path="/job/1" />
+      <Job path="/job/:jobId" />
     </Router>
   </>
 );
