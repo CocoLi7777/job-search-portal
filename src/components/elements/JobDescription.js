@@ -5,17 +5,28 @@ import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: '60%',
+    maxWidth: '40%',
     fontFamily: 'roboto',
     fontSize: '20px',
     borderColor: 'gray',
     borderRadius: '5px',
     margin: '120px auto',
+    fontFamily: 'Open Sans',
   },
-  title: {},
+  title: {
+    fontSize: '25px',
+    fontWeight: 'bold',
+  },
+  desc: {
+    fontSize: '15px',
+  },
+  salary: {
+    fontSize: '15px',
+  },
 }));
 
 function JobDescription({ job, className, ...rest }) {
@@ -25,13 +36,16 @@ function JobDescription({ job, className, ...rest }) {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.title}>{job.jobTitle}</Paper>
+          <div className={classes.source}> Job Source: {job.source}</div>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>{job.place}</Paper>
+          <div className={classes.title}>{job.jobTitle}</div>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>{job.salary}</Paper>
+          <div className={classes.paper}>{job.company}</div>
+        </Grid>
+        <Grid item xs={12}>
+          <div className={classes.salary}>{job.salary}</div>
         </Grid>
         <Grid item xs={12}>
           <Button variant="contained" color="primary" disableElevation>
@@ -39,7 +53,7 @@ function JobDescription({ job, className, ...rest }) {
           </Button>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paper}>{job.description}</Paper>
+          <div className={classes.desc}>{job.description}</div>
         </Grid>
       </Grid>
     </div>

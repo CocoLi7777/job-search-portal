@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     //width: '100%',
     fontFamily: 'roboto',
-
     backgroundColor: '#f4f6f8',
   },
 }));

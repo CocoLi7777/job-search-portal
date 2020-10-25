@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     alignContent: 'center',
     margin: '0px auto',
     backgroundColor: '#f4f6f8',
+    fontFamily: 'Open Sans',
   },
   title: {
     fontSize: '18px',

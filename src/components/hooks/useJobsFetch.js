@@ -11,6 +11,7 @@ export const useJobsFetch = () => {
     try {
       if (refresh) {
         const result = await axios.get(endpoint);
+        //console.log(result.data);
         setJobs(result.data);
         setRefresh(false);
       }
